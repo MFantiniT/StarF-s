@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Formulário de Inscrição no Fã Clube</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 50%; margin: auto; padding-top: 50px; }
+        form { display: flex; flex-direction: column; }
+        label { margin-top: 10px; }
+        input[type="text"], input[type="date"] { padding: 10px; }
+        button { margin-top: 20px; padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Confirme os dados para gerar a Carteirinha</h2>
+        <form action="processarFormulario.php" method="post" enctype="multipart/form-data">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value='Matheus Fantini Teixeira' required>
+
+            <label for="dataInscricao">Data de Inscrição:</label>
+            <input type="text" id="dataInscricao" name="dataInscricao" value="19/10/2023" required>
+
+            <label for="nomeFanClube">Nome do Fã Clube:</label>
+            <input type="text" id="nomeFanClube" name="nomeFanClube" value="Akira FãClub" required>
+
+            <label for="foto">Foto:</label>
+            <input type="file" id="foto" name="foto" value="" required>
+
+            <button type="submit">Gerar Carteirinha</button>
+        </form>
+    </div>
+</body>
+</html>
