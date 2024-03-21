@@ -21,10 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['foto'])) {
         move_uploaded_file($file_tmp, "uploads/" . $file_name);
         // Redireciona para a carteirinha com os dados do formulário e o nome do arquivo da imagem
         $query = http_build_query([
-            'nome' => "Matheus Fantini Teixeira",
-            'cpf' => "09600978999",
-            'dataInscricao' => "29/10/1995",
-            'nomeFanClube' => "Akira",
+            'nome' => $_POST['nome'],
+            'cpf' => $_POST['cpf'],
+            'dataInscricao' => $_POST['dataInscricao'],
+            'nomeFanClube' => $_POST['nomeFanClube'],
             'foto' => 'uploads/' . $file_name
         ]);
         header('Location: carteirinha.php?' . $query);
